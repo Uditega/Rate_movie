@@ -5,9 +5,9 @@ import 'package:rate_movies/screens/components/movie_item.dart';
 Widget gridItem(context, constraints){
   return GridView.count(
     crossAxisCount: 2,
-    childAspectRatio: 0.8,
+    childAspectRatio: 0.72,
     crossAxisSpacing: 15,
-    mainAxisSpacing: 15,
+    mainAxisSpacing: 35,
     children: List.generate(
         movieList.length,
             (index) => movieItem(context, constraints,

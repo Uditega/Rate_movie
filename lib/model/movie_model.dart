@@ -22,7 +22,7 @@ class MovieStructure {
    MovieStructure(
      id: '1',
      imgUrl: 'images/movie1.jpg',
-     name: 'Dune',
+     name: 'Dune ',
      ratings: 7.8,
      descriptions: 'my movie is the best'
    ),
@@ -43,7 +43,7 @@ class MovieStructure {
    MovieStructure(
        id: '4',
        imgUrl: 'images/movie4.jpg',
-       name: 'Jungle Cruisers',
+       name: 'Jungle Cruisers ',
        ratings: 7.0,
        descriptions: 'my movie is the best'
    ),

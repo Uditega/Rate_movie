@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rate_movies/movie_color.dart';
 
@@ -6,52 +7,46 @@ Widget movieItem(context, constraints, imgUrl, name, ratings){
     decoration: BoxDecoration(
         color: MovieColor.appBarBlue,
         borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade300,
-            blurRadius: 90,
-          ),
-        ]
     ),
-    child: Padding(
-      padding: const EdgeInsets.fromLTRB(7, 12, 7, 5),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          GestureDetector(
-            onTap: () {
-
-            },
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset("$imgUrl",
-                height: constraints.maxHeight*0.55,
-                width: MediaQuery.of(context).size.width,
-                fit: BoxFit.cover,
-              ),
-            ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ClipRRect(
+          borderRadius: const BorderRadius.only(
+            topRight: Radius.circular(15),
+            topLeft: Radius.circular(15),
           ),
-          SizedBox(
-            height: constraints.maxHeight*0.04,
+          child: Image.asset("$imgUrl",
+            height: constraints.maxHeight*0.22,
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.cover,
           ),
-          Row(
+        ),
+        SizedBox(
+          height: constraints.maxHeight*0.01,
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(7, 0, 7, 0),
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('$name',
+                overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
                   fontSize: 14,
-                  color: Color(0xff555555),
+                  color: Colors.white,
                   fontFamily: 'Poppins',
                 ),
               ),
              Card(
                elevation: 0,
+               color: MovieColor.backgroundBlue,
                child: Padding(
-                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                  child: Text('$ratings',
                    style: const TextStyle(
                      fontSize: 11,
-                     color: Color(0xff555555),
+                     color: Colors.white,
                      fontFamily: 'Poppins',
                    ),
                  ),
@@ -59,7 +54,8 @@ Widget movieItem(context, constraints, imgUrl, name, ratings){
              )
             ],
           ),
-        ],
-      ),
-    ),);
+        ),
+      ],
+    ),
+  );
 }
